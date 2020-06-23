@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar } from 'antd'
-import disableScroll from 'disable-scroll'
+// import disableScroll from 'disable-scroll'
 
 const navLinks = [
   {
@@ -45,8 +45,8 @@ const Navigation = ({ user }) => {
     }
   }, [])
   
-  menuActive ? disableScroll.on() : disableScroll.off()
-  
+  // menuActive ? disableScroll.on() : disableScroll.off()
+
   return (
     <nav className="site-navigation">
       <span className="menu-title">My React Blog</span>
