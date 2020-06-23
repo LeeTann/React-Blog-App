@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   color: $text-color;
+  position: fixed;
+  z-index: 12;
 
   .menu-title {
     font-size: 24px;
@@ -66,7 +68,10 @@
 
 @media screen and (max-width: 900px) {
   .site-navigation {
+    position: unset;
+
     .menu-content-container {
+      z-index: 100;
       width: 300px;
       height: calc(100% - 65px);
       background: white;
@@ -78,6 +83,10 @@
       
       &.active {
         left: 0px;
+      }
+
+      .sticky {
+        position: fixed;
       }
 
       ul {

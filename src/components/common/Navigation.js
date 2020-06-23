@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar } from 'antd'
+import disableScroll from 'disable-scroll'
 
 const navLinks = [
   {
@@ -38,14 +39,14 @@ const Navigation = ({ user }) => {
   useEffect(() => {
     // add when mounted
     document.addEventListener("mousedown", handleClick)
-
     // return function to be called when unmounted
     return () => {
       document.removeEventListener("mousedown", handleClick)
     }
   }, [])
-
-
+  
+  menuActive ? disableScroll.on() : disableScroll.off()
+  
   return (
     <nav className="site-navigation">
       <span className="menu-title">My React Blog</span>
@@ -54,7 +55,7 @@ const Navigation = ({ user }) => {
         <ul>
           { navLinks.map((link, index) => (
             <li key={index}>
-              <Link to={link.path}>{link.title}</Link>
+              <Link to={link.path} onClick={() => setMenuActive(false)}>{link.title}</Link>
             </li>
           ))}
         </ul>
