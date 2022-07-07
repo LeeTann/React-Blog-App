@@ -12,6 +12,6 @@
     "apollo-server-koa": "^2.15.0",
     "graphql-tools": "^6.0.10",
     "koa": "^2.13.0",
-    "moment": "^2.27.0"
+    "moment": "^2.29.4"
   }
 }
